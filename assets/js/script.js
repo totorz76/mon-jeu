@@ -9,3 +9,10 @@ powerPc()
 console.log(powerPc());
 
 
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+        console.log('Bouton cliqué :', button.id);
+    })
+})
