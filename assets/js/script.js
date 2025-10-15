@@ -70,3 +70,17 @@ function playGame(pcChoice, userChoice){
     }
     
 }
+
+document.getElementById("reset").addEventListener("click", () =>{
+    scoreJoueur = 0;
+    scoreOrdi = 0;
+
+    document.getElementById("score-joueur").textContent = "0";
+    document.getElementById("score-ordi").textContent = "0";
+    document.getElementById("choixUser").textContent = "?";
+    document.getElementById("choixPc").textContent = "?";
+    document.getElementById("resultat").textContent = "Résultat : ";
+    document.getElementById("winner").textContent = "";
+
+    }
+)
