@@ -1,6 +1,8 @@
 
 let scoreJoueur = 0;
 let scoreOrdi = 0;
+const scoreMax = 10;
+let endGame = false;
 
 function powerPc(){
     const element = ["feu", "eau" , "terre"]
@@ -18,6 +20,7 @@ buttons.forEach((button) => {
 })
 
 function powerPlayer(userChoice){
+    if (endGame) return;
     // au moment de notre choix il faut que le pc choisisse (donc la const en dessous), puis on annonce les choix et après on appelle la fonction qui permet de définir les règles du jeu
     const pcChoice = powerPc()
     console.log("Le joueur a choisi : ",userChoice);
@@ -54,4 +57,16 @@ function playGame(pcChoice, userChoice){
 
     document.getElementById("score-joueur").textContent = scoreJoueur
     document.getElementById("score-ordi").textContent = scoreOrdi
+
+    if (scoreJoueur === scoreMax){
+        winner = "Le Joueur !";
+        endGame = true;
+    } else if (scoreOrdi === scoreMax) {
+        winner = "L'Ordinateur !";
+        endGame = true;
+    }
+    if (endGame){
+        document.getElementById("winner").textContent ="Le gagnant du round est : "+ winner
+    }
+    
 }
