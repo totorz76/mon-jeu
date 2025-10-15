@@ -13,6 +13,10 @@ const buttons = document.querySelectorAll("button");
 
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
-        console.log('Bouton cliqué :', button.id);
+    powerPlayer(button.id);
     })
 })
+
+function powerPlayer(userChoice){
+    console.log("Le joueur a choisi :", userChoice);
+} 
