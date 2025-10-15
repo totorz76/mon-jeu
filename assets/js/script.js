@@ -66,12 +66,18 @@ function playGame(pcChoice, userChoice){
         endGame = true;
     }
     if (endGame){
-        document.getElementById("winner").textContent ="Le gagnant du round est : "+ winner
+        document.getElementById("winner").textContent ="Le gagnant du round est : "+ winner;
+         document.querySelectorAll(".btnchx").forEach(btn => {
+            btn.disabled = true;
+         })
     }
     
 }
 
 document.getElementById("reset").addEventListener("click", () =>{
+    document.querySelectorAll(".btnchx").forEach(btn => {
+    btn.disabled = false;
+    });
     scoreJoueur = 0;
     scoreOrdi = 0;
 
@@ -81,6 +87,5 @@ document.getElementById("reset").addEventListener("click", () =>{
     document.getElementById("choixPc").textContent = "?";
     document.getElementById("resultat").textContent = "Résultat : ";
     document.getElementById("winner").textContent = "";
-
     }
 )
