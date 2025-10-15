@@ -22,6 +22,8 @@ licence.md
 .gitignore
 ```
 
+J'insiste pour que vous fassier des **commits** réguliers , avec des titres compréhensifs.
+
 Faite une feuille de style pour votre jeu.
 
 Dans votre **readme.md** vous devez en quelques phrases :
