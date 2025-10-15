@@ -20,8 +20,14 @@ buttons.forEach((button) => {
 function powerPlayer(userChoice){
     // au moment de notre choix il faut que le pc choisisse (donc la const en dessous), puis on annonce les choix et après on appelle la fonction qui permet de définir les règles du jeu
     const pcChoice = powerPc()
-    console.log("Le joueur a choisi :", userChoice);
-    console.log("L'ordinateur a choisi :", pcChoice);
+    console.log("Le joueur a choisi : ",userChoice);
+    choixUser = userChoice
+
+    console.log("L'ordinateur a choisi : ",pcChoice);
+    choixPc = pcChoice
+
+    document.getElementById("choixUser").textContent = choixUser;
+    document.getElementById("choixPc").textContent = choixPc;
     playGame (pcChoice, userChoice)    
 } 
 
@@ -36,11 +42,11 @@ function playGame(pcChoice, userChoice){
         (userChoice === "eau" && pcChoice === "feu") ||
         (userChoice === "terre" && pcChoice === "eau")
     ) {
-         resultat = "Le Joueur a gagné !"
+         resultat = "Le Joueur a gagné !";
          scoreJoueur++;
         console.log('Le Joueur a gagné !');
     } else {
-         resultat = "L'Ordinateur a gagné !"
+         resultat = "L'Ordinateur a gagné !";
          scoreOrdi++;
         console.log("L'Ordinateur a gagné !");
     }
